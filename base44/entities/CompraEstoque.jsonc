@@ -1,0 +1,79 @@
+{
+  "name": "CompraEstoque",
+  "type": "object",
+  "properties": {
+    "produto_id": {
+      "type": "string",
+      "title": "Produto"
+    },
+    "quantidade": {
+      "type": "number",
+      "title": "Quantidade"
+    },
+    "valor_total": {
+      "type": "number",
+      "title": "Valor Total (R$)"
+    },
+    "fornecedor": {
+      "type": "string",
+      "title": "Fornecedor"
+    },
+    "data_compra": {
+      "type": "string",
+      "format": "date",
+      "title": "Data da Compra"
+    },
+    "forma_pagamento": {
+      "type": "string",
+      "title": "Forma de Pagamento",
+      "enum": [
+        "\u00c0 Vista",
+        "A Prazo 30 dias",
+        "A Prazo 30/60 dias",
+        "A Prazo 30/60/90 dias"
+      ],
+      "default": "\u00c0 Vista"
+    },
+    "data_vencimento_1": {
+      "type": "string",
+      "format": "date",
+      "title": "Vencimento 1\u00aa Parcela"
+    },
+    "data_vencimento_2": {
+      "type": "string",
+      "format": "date",
+      "title": "Vencimento 2\u00aa Parcela"
+    },
+    "data_vencimento_3": {
+      "type": "string",
+      "format": "date",
+      "title": "Vencimento 3\u00aa Parcela"
+    },
+    "status_pagamento": {
+      "type": "string",
+      "title": "Status do Pagamento",
+      "enum": [
+        "Pendente",
+        "Parcialmente Pago",
+        "Pago"
+      ],
+      "default": "Pendente"
+    },
+    "observacoes": {
+      "type": "string",
+      "title": "Observa\u00e7\u00f5es"
+    }
+  },
+  "required": [
+    "produto_id",
+    "quantidade",
+    "valor_total",
+    "data_compra",
+    "forma_pagamento"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

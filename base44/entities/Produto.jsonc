@@ -1,0 +1,97 @@
+{
+  "name": "Produto",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "title": "Nome do Produto"
+    },
+    "categoria": {
+      "type": "string",
+      "title": "Categoria",
+      "enum": [
+        "Sementes",
+        "Fertilizantes",
+        "Defensivos",
+        "Combust\u00edvel",
+        "Outros"
+      ]
+    },
+    "unidade": {
+      "type": "string",
+      "title": "Unidade",
+      "enum": [
+        "kg",
+        "L",
+        "un",
+        "sc",
+        "t",
+        "m\u00b3"
+      ]
+    },
+    "estoque_atual": {
+      "type": "number",
+      "title": "Estoque Atual"
+    },
+    "estoque_minimo": {
+      "type": "number",
+      "title": "Estoque M\u00ednimo"
+    },
+    "preco_unitario": {
+      "type": "number",
+      "title": "Pre\u00e7o Unit\u00e1rio (R$)"
+    },
+    "fornecedor": {
+      "type": "string",
+      "title": "Fornecedor"
+    },
+    "data_validade": {
+      "type": "string",
+      "format": "date",
+      "title": "Data de Validade"
+    },
+    "forma_pagamento": {
+      "type": "string",
+      "title": "Forma de Pagamento",
+      "enum": [
+        "\u00c0 Vista",
+        "A Prazo 30 dias",
+        "A Prazo 30/60 dias",
+        "A Prazo 30/60/90 dias"
+      ],
+      "default": "\u00c0 Vista"
+    },
+    "data_compra": {
+      "type": "string",
+      "format": "date",
+      "title": "Data da Compra"
+    },
+    "data_vencimento_1": {
+      "type": "string",
+      "format": "date",
+      "title": "Vencimento 1\u00aa Parcela"
+    },
+    "data_vencimento_2": {
+      "type": "string",
+      "format": "date",
+      "title": "Vencimento 2\u00aa Parcela"
+    },
+    "data_vencimento_3": {
+      "type": "string",
+      "format": "date",
+      "title": "Vencimento 3\u00aa Parcela"
+    }
+  },
+  "required": [
+    "nome",
+    "categoria",
+    "unidade",
+    "estoque_atual",
+    "preco_unitario"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "name": "Maquinario",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "title": "Nome do Equipamento"
+    },
+    "tipo": {
+      "type": "string",
+      "title": "Tipo",
+      "enum": [
+        "Trator",
+        "Colheitadeira",
+        "Pulverizador",
+        "Plantadeira",
+        "Caminh\u00e3o",
+        "Moto",
+        "Implemento",
+        "Outro"
+      ]
+    },
+    "marca": {
+      "type": "string",
+      "title": "Marca"
+    },
+    "modelo": {
+      "type": "string",
+      "title": "Modelo"
+    },
+    "ano": {
+      "type": "number",
+      "title": "Ano"
+    },
+    "placa": {
+      "type": "string",
+      "title": "Placa / S\u00e9rie"
+    },
+    "horas_uso_atual": {
+      "type": "number",
+      "title": "Horas de Uso Atual"
+    },
+    "quilometragem_atual": {
+      "type": "number",
+      "title": "Quilometragem Atual (km)"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Ativo",
+        "Em Manuten\u00e7\u00e3o",
+        "Inativo"
+      ],
+      "default": "Ativo"
+    },
+    "foto_url": {
+      "type": "string",
+      "title": "Foto"
+    },
+    "observacoes": {
+      "type": "string",
+      "title": "Observa\u00e7\u00f5es"
+    }
+  },
+  "required": [
+    "nome",
+    "tipo"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

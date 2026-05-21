@@ -1,0 +1,69 @@
+{
+  "name": "Funcionario",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "title": "Nome"
+    },
+    "email": {
+      "type": "string",
+      "title": "E-mail de Acesso"
+    },
+    "telefone": {
+      "type": "string",
+      "title": "WhatsApp (com DDD)"
+    },
+    "cargo": {
+      "type": "string",
+      "title": "Cargo"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Ativo",
+        "Inativo"
+      ],
+      "default": "Ativo"
+    },
+    "modulos_acesso": {
+      "type": "array",
+      "title": "M\u00f3dulos com Acesso",
+      "items": {
+        "type": "string",
+        "enum": [
+          "lavouras",
+          "atividades",
+          "despesas",
+          "produtos",
+          "funcionarios",
+          "frota",
+          "relatorio"
+        ]
+      },
+      "default": [
+        "lavouras",
+        "atividades"
+      ]
+    },
+    "convite_enviado": {
+      "type": "boolean",
+      "title": "Convite Enviado",
+      "default": false
+    },
+    "observacoes": {
+      "type": "string",
+      "title": "Observa\u00e7\u00f5es"
+    }
+  },
+  "required": [
+    "nome",
+    "telefone"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

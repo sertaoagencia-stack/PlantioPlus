@@ -1,0 +1,64 @@
+{
+  "name": "Cliente",
+  "type": "object",
+  "properties": {
+    "nome_empresa": {
+      "type": "string",
+      "title": "Nome da Empresa"
+    },
+    "responsavel": {
+      "type": "string",
+      "title": "Nome do Respons\u00e1vel"
+    },
+    "email": {
+      "type": "string",
+      "title": "E-mail"
+    },
+    "telefone": {
+      "type": "string",
+      "title": "Telefone / WhatsApp"
+    },
+    "plano": {
+      "type": "string",
+      "title": "Plano",
+      "enum": [
+        "B\u00e1sico",
+        "Profissional",
+        "Enterprise"
+      ],
+      "default": "Profissional"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Ativo",
+        "Inativo",
+        "Trial"
+      ],
+      "default": "Ativo"
+    },
+    "data_inicio": {
+      "type": "string",
+      "format": "date",
+      "title": "Data de In\u00edcio"
+    },
+    "tempo_uso_meses": {
+      "type": "number",
+      "title": "Tempo de Uso Contratado (meses)"
+    },
+    "data_vencimento": {
+      "type": "string",
+      "format": "date",
+      "title": "Data de Vencimento"
+    },
+    "observacoes": {
+      "type": "string",
+      "title": "Observa\u00e7\u00f5es"
+    }
+  },
+  "required": [
+    "nome_empresa",
+    "email"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "name": "Despesa",
+  "type": "object",
+  "properties": {
+    "descricao": {
+      "type": "string",
+      "title": "Descri\u00e7\u00e3o"
+    },
+    "valor": {
+      "type": "number",
+      "title": "Valor (R$)"
+    },
+    "categoria": {
+      "type": "string",
+      "title": "Categoria",
+      "enum": [
+        "Sementes",
+        "Fertilizantes",
+        "Defensivos",
+        "M\u00e3o de Obra",
+        "Maquin\u00e1rio",
+        "Combust\u00edvel",
+        "Irriga\u00e7\u00e3o",
+        "Frete",
+        "Manuten\u00e7\u00e3o",
+        "Outros"
+      ]
+    },
+    "data": {
+      "type": "string",
+      "format": "date",
+      "title": "Data"
+    },
+    "lavoura_id": {
+      "type": "string",
+      "title": "Lavoura"
+    },
+    "produto_id": {
+      "type": "string",
+      "title": "Produto do Estoque"
+    },
+    "quantidade_produto": {
+      "type": "number",
+      "title": "Quantidade Utilizada"
+    },
+    "fornecedor": {
+      "type": "string",
+      "title": "Fornecedor"
+    },
+    "nota_fiscal": {
+      "type": "string",
+      "title": "Nota Fiscal"
+    },
+    "comprovante_url": {
+      "type": "string",
+      "title": "Comprovante de Pagamento"
+    }
+  },
+  "required": [
+    "descricao",
+    "valor",
+    "categoria",
+    "data",
+    "lavoura_id"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

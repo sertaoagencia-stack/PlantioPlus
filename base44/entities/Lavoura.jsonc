@@ -1,0 +1,53 @@
+{
+  "name": "Lavoura",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "title": "Nome da Lavoura"
+    },
+    "cultura": {
+      "type": "string",
+      "title": "Cultura"
+    },
+    "area_hectares": {
+      "type": "number",
+      "title": "\u00c1rea (tarefas)"
+    },
+    "safra": {
+      "type": "string",
+      "title": "Safra"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Planejamento",
+        "Plantio",
+        "Desenvolvimento",
+        "Colheita",
+        "Finalizada"
+      ],
+      "default": "Planejamento"
+    },
+    "localizacao": {
+      "type": "string",
+      "title": "Localiza\u00e7\u00e3o"
+    },
+    "observacoes": {
+      "type": "string",
+      "title": "Observa\u00e7\u00f5es"
+    }
+  },
+  "required": [
+    "nome",
+    "cultura",
+    "area_hectares",
+    "safra"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

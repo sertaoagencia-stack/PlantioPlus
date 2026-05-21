@@ -1,0 +1,17 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "title": "Perfil de Acesso",
+      "enum": [
+        "admin",
+        "proprietario",
+        "gerente",
+        "funcionario"
+      ],
+      "default": "funcionario"
+    }
+  }
+}
